@@ -5,6 +5,8 @@ body {
     background-color: beige;
     margin:0;
     padding:0;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 div#container {
@@ -14,10 +16,12 @@ div#container {
     margin: auto; 
     
     
+    
 }
 
+
 header {
-    background-color: dimgray;
+    background-image: url(../images/header_img.jpg);
     width: 100%;
     height: 150px;
     margin: 0;
@@ -29,14 +33,20 @@ header h1 {
     color: burlywood;
     text-shadow: 1px 1px  1px black;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 nav {
     clear:both;
     width:100%;
     height: 45px;
-    background-color: black;
+    background-color: darkslategrey;
     margin: 0;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    box-shadow: 3px 3px 3px black;
+
     
 }
 
@@ -65,4 +75,138 @@ nav ul li a:hover {
 }
 .active {
     background-color: skyblue;
+}
+
+#footer{
+    width:100%;
+    background-color: dimgray;
+    color: coral;
+    text-align: center;
+    padding:20px 0;
+}
+.keepOpen{
+    clear:both;
+}
+/* index.html */
+img#home_img {
+    width:400px;
+    display:block;
+    margin: 10px;
+    border: 5px outset brown;
+    float: left;
+    
+    
+}
+
+h2#h2_home {
+    float: left;
+    margin-bottom: 0;
+    margin-top: 10px;
+    
+        
+}
+
+p#p_home {
+    float: left;
+    width: 56%;
+    margin-top: 10px;
+
+}
+
+/*about.html*/
+
+img#image_bob {
+    display: block;
+    width:200px;
+    float: left;
+    margin: 10px;
+    
+}
+h2#h2_about {
+    margin-bottom: 5px;
+    
+    float: left;
+}
+
+p#p_about {
+    float: left;
+    margin: 8px;
+    width: 75%;
+    
+    
+}
+h2#h2_produce {
+    width: 100%;
+    margin-left: 10px
+}
+div#gallery{
+    width:100%;
+    padding-left: 80px;
+
+}
+figure {
+    width: 200px;
+    height: 200px;
+    float: left;
+    background: linear-gradient(#e23434, #ffff89); 
+/*    background: -webkit-linear-gradient(red, yellow);  For Safari 5.1 to 6.0 */
+
+;
+    border: 1px 1px black;
+    box-shadow: 1px 1px 10px black;
+    
+}
+
+figure img{
+    width: 200px;
+    height: 180px;
+    margin: 1px, 1px, 1px, 1px;
+    display: block;
+    
+}
+
+    
+
+figcaption{
+    text-align: center;
+    padding: bottom;
+    font-family: sans-serif, serif;
+    font-size: 14px;
+    width: 100%;
+    
+}
+/* contact.html */
+
+h2#h2-contact{
+    padding-left: 10px;
+    margin-left: 10px;
+    width: 40%;
+    margin-right: 10px;
+}
+
+form {
+    float: left;
+}
+form#form-contact{
+    margin-left: 10px;
+}
+
+form input{
+    margin-bottom:5px;
+    
+}
+
+form #button-contact{
+    margin-left: 0px;
+    width: 80px;
+    height: 40px;
+    margin-bottom:15px;
+    font-weight: 500;
+    
+
+}
+
+div#map {
+    float: right;
+    margin: 20px;
 }
