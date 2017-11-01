@@ -1,0 +1,33 @@
+/*Style for Dallin's website*/
+
+/*Reset*/
+html,body,div,h1,h2,h3,h4,h5,h6,ul,ol,li
+{
+    margin:0;
+    padding:0;
+}
+
+/*Universal Style*/
+
+body{
+    background-color: black;
+}
+
+#container{
+    background-color: beige;
+    width:300px;
+    
+}
+
+h1{
+    color:brown;
+    
+}
+
+p{
+    color:darkcyan;
+}
+
+.red{
+    color:red
+}
