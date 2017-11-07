@@ -43,11 +43,56 @@ div#blog-post{
     padding:10px;
     color: white;;
 }
-
 img#post-image{
     display:block;
+    align-self: flex-start;
     margin:5px;
     width:150px;
     height:150px;
-    background-color: forestgreen
+    background-color: #00ffe2;
 }
+div#post-body {
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    margin:0px 5px;
+    font-family: 'Libre Franklin';
+}
+h2#post-title{
+    align-self: auto;
+    font-family: 'Anton';
+    font-size: 20px;
+}
+h5#post-stamp{
+    color: #00dce5;
+}
+p#post-text{
+    font-size: 1.15em;
+}
+header h1 {
+    align-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
