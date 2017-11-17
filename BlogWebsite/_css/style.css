@@ -72,7 +72,10 @@ p#post-text{
 header h1 {
     align-content: center;
 }
-
+.videoContainer {
+    width: 350px;
+    height: 200px;
+}
 
 
 
