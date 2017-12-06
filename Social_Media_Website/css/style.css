@@ -2,7 +2,7 @@
 
 /* Css Reset */
 
-html, body, div, header, h1, h2, h3, h4, h5, h6, nav, ul ,ol , li, post, footer, p {
+html, body, div, header, h1, h2, h3, h4, h5, h6, nav, ul ,ol , li, post, footer, p, a {
     margin: 0;
     padding: 0;
 }
@@ -15,6 +15,7 @@ div#container {
     margin:auto;
     width: 80%;
     flex-flow: column;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
@@ -28,6 +29,9 @@ header {
 
 nav {
     display: flex;
+    width: 25%;
+    order:1; 
+    align-content: flex-start;
 }
 
 #profile_image {
@@ -37,4 +41,34 @@ nav {
     align-self: flex-end;
     background-color: aliceblue;
     border-radius: 200px;
+    margin-left: 32px;
+   
+}
+div#profile_info {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width:100%;
+    align-self: flex-end;
+    margin-left: 16px;
+    
+}
+div#profile_info h2 {
+    font-size: 2em;
+    order:1;
+    
+    
+}
+div#profile_info h4 {
+    font-size: 1em;
+    order: 2; 
+    
+}
+footer{
+    width:100%;
+    order:2;
+}
+div#content {
+    width: 75%;
+    order: 3;
 }
