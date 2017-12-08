@@ -11,12 +11,12 @@ body{
     font-family: sans-serif;
 }
 div#container { 
+    display: flex;
     background-color: #fff;
     margin:auto;
     width: 80%;
-    flex-flow: column;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+
 }
 
 header {
@@ -29,9 +29,10 @@ header {
 
 nav {
     display: flex;
-    width: 25%;
+    width: 10%;
     order:1; 
     align-content: flex-start;
+    margin:  16px 0px 0px 80px;
 }
 
 #profile_image {
@@ -66,9 +67,66 @@ div#profile_info h4 {
 }
 footer{
     width:100%;
-    order:2;
+    order:3;
 }
 div#content {
     width: 75%;
+    order: 2;
+}
+nav ul {
+    list-style: none;
+}
+nav li {
+    
+}
+nav li a{
+    text-decoration: none;
+    font-family: sans-serif;
+    color: black
+}
+#content div.post {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 8px auto;
+    width: 85%;
+    background-color: #d9d9d9;
+    box-shadow: 2px 2px 2px 2px black;
+}
+
+
+#content div.post img.ppp {
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-color: whitesmoke;
+    order: 1;
+    
+}
+#content div.post h3.pnp {
+    width: 50%;
+    height: auto;
+    order: 2;
+    margin: 8px 6px;
+}
+
+
+
+div#content div.post p.time_stamp{
     order: 3;
 }
+
+
+div#content div.post h5#p_comments{
+    order: 4;
+}
+
+div#content div.post h5#p_likes{
+    order: 5;
+}
+
+
+
+
+
+
