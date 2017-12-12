@@ -85,6 +85,7 @@ nav li a{
     color: black
 }
 #content div.post {
+    justify-content: flex-start;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -114,6 +115,9 @@ nav li a{
 
 div#content div.post p.time_stamp{
     order: 3;
+    font-weight: 600;
+    font-size: .8em;
+    color: royalblue;
 }
 
 
@@ -123,6 +127,27 @@ div#content div.post h5#p_comments{
 
 div#content div.post h5#p_likes{
     order: 5;
+}
+div#content div.post_info{
+    width: 75%;
+    order: 2;
+}
+div#content div.post div.post_foot{
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+  
+    order: 3;
+}
+
+div#content div.post div.post_foot h5.p_comments {
+    order: 4;
+}
+
+
+div#content div.post div.post_foot h5.p_likes {
+    order: 5;
+
 }
 
 
