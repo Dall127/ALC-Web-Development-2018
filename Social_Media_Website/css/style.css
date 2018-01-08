@@ -12,7 +12,7 @@ body{
 }
 div#container { 
     display: flex;
-    background-color: #fff;
+    background-color: #003baa;
     margin:auto;
     width: 80%;
     flex-flow: row wrap;
@@ -29,13 +29,6 @@ header {
     background-repeat: no-repeat;
 }
 
-nav {
-    display: flex;
-    width: 10%;
-    order:1; 
-    align-content: flex-start;
-    margin:  16px 0px 0px 80px;
-}
 
 #profile_image {
     display: block;
@@ -76,17 +69,7 @@ div#content {
     width: 75%;
     order: 2;
 }
-nav ul {
-    list-style: none;
-}
-nav li {
-    
-}
-nav li a{
-    text-decoration: none;
-    font-family: sans-serif;
-    color: black
-}
+
 #content div.post {
     justify-content: flex-start;
     display: flex;
@@ -125,13 +108,6 @@ div#content div.post p.time_stamp{
 }
 
 
-div#content div.post h5#p_comments{
-    order: 4;
-}
-
-div#content div.post h5#p_likes{
-    order: 5;
-}
 div#content div.post_info{
     width: 75%;
     order: 2;
@@ -145,12 +121,15 @@ div#content div.post div.post_foot{
 }
 
 div#content div.post div.post_foot h5.p_comments {
+    margin: 8px 6px;
     order: 4;
 }
 
 
 div#content div.post div.post_foot h5.p_likes {
+    margin: 8px 6px;
     order: 5;
+    
 
 }
 
@@ -160,7 +139,47 @@ div#content div.post p.post_text {
 
 
 
+/* Navigation */
+nav {
+    display: flex;
+    width: 10%;
+    order:1; 
+    align-content: flex-start;
+    margin:  16px 0px 0px 80px;
+}
 
 
+nav ul {
+    list-style: none;
+}
 
+nav li a {
+    text-decoration: none;
+    font-family: sans-serif;
+    color: white
+}
+nav li a:hover {
+    color: darkgrey;
+}
+
+footer{
+    order:3; 
+    width:100%;
+    text-align: center;
+    color: darkgrey;
+    margin:12px;
+}
+
+div#content div.post div.post_foot .com_pic {
+    order: 4;
+    border-radius: 100px;
+    width: 50px;
+}
+
+div#content div.post div.post_foot p.comment {
+    order: 4
+}
+div#content div.post div.post_foot{
+    margin-left: 5px;
+}
 
