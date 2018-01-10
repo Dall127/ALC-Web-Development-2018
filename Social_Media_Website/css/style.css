@@ -12,7 +12,7 @@ body{
 }
 div#container { 
     display: flex;
-    background-color: #003baa;
+    background-color: #001743;
     margin:auto;
     width: 80%;
     flex-flow: row wrap;
@@ -38,6 +38,7 @@ header {
     background-color: white;
     border-radius: 200px;
     margin-left: 32px;
+    margin-bottom: 8px;
    
 }
 div#profile_info {
