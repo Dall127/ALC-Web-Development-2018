@@ -6,14 +6,74 @@
     
     <body>
         <script>
+            
+            Town();
+            function Town() {
+                var town = prompt("welcome to a small town in some fantasy land place! We have a butcher, baker, and a candlestick Maker").toLowerCase();
+            
+            if(town == "inn") {
+                    Inn();
+                }
+            
+                
+            else if(town == "baker") {
+                Baker();
+                
+            }
+            else {
+                Town()
+            }
+                
+            }
+            
+            
+            
+            function Inn() {
+                var inn = prompt("Welcome to the Inn traveller, what can I help you with");
+
+            }
+            
+            function Baker() {
+                var baker = prompt("How ye doing Ladee?")
+                if(baker == "exit") {
+                    Town();
+                }
+                else if(baker == "bread") {
+                    alert("nice hot loaf of bread for yee!")
+                    bread ++;
+                }
+                    else{
+                    alert("I don't have any" + baker)
+                }
+                
+            }
+            
+            
+            
+            
+            
+            
 //        alert("Hey, Listen");
 //        confirm("Do you want to go to the movies? As Friends of course...")
-          
+          /*
         var favColor = prompt("What is your favorite color").toLowerCase();
-        
-        if(favColor == "blue") {
+        switch(favColor){
+            case "blue":
+                alert("Yep. Blue is a cool color");
+                break;
+            case "green":
+                alert("weirdo.... Green isn't that good");
+                break;
+                       
+            case default:
+                alert("We like real colors");
+                break;
+                }
+            */
+            
+      /*  if(favColor == "blue") {
             alert("Your favorite color is " + favColor + ". Mine too")
-        }
+     }
             else if(favColor == "red") 
             { 
                 alert("Your favorite color is " + favColor + ". Red is the color of a Rose"); 
@@ -34,6 +94,7 @@
             else{
                 alert("Your favorite color is " + favColor + ". Good for you");
             }
+            */
         </script>
     
     </body>

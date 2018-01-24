@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+        Adventure Game
+        </title>
+    </head>
+    <body>
+        <h1>Adventure Game v0.1</h1>
+         <p>By: Dallin</p>
+        <script>
+        endStatement = "You return to looking at your surroundings."
+        askStatement = "What do you want to do"
+        wDwarf = False;
+        wElf == False;
+        wWand == False;
+            
+            
+        Function actions(var action, var position, var people=null) {
+            if(action == Talk) {
+                if(people==null){
+                    alert("There is no one here to talk to. Best be getting on");
+                }
+                else{
+                    var response = prompt("Who do you want to talk to?");
+                    return response;
+
+                }
+                
+            }
+            
+        }
+        var map = [
+
+                         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                         [0, 0, 1, 2, 2, 1, 2, 2, 1, 0],
+                         [0, 0, 0, 4, 0, 2, 0, 0, 0, 0],
+                         [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+                         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                   ];
+        x = 5;
+        y = 6;
+        position = map[y][x];
+            Function() {
+                
+                var playerName = prompt("What is your Name?");
+                alert("Welcome Sorcerer, welcome to Detheren");
+                var beginAdv = confirm("Are you ready to begin your Adventure");
+                
+                if(beginAdv == True) {
+                    Inn();
+                }
+                
+            }
+            Function Inn(var dwarf, var elf) {
+                dwarfP = ". A dwarf sits off in the corner"
+                ungathered = ["Dwarf", "Elf"]
+                var inn = "Inn"
+                if(dwarf == True) {
+                    
+                    var action = Prompt("The Inn smells of sweat and adventure" + if(wDwarf==True){ return dwarfP} +. "An Elf polishes his seemingly rare blade. " askStatement).toLowerCase();
+                }
+
+                if(Actions(action, inn, ungathered)) == "Dwarf") {
+                    if(elf == True) {
+                        Alert("The Dwarf looks at you, and seems to want to talk, but then sees the elf with you; the look of disgust is very apparent. He does not respond." + endStatement);
+                        Inn();
+                        
+                        };
+                    else if(wdwarf == False) {
+                        var bool = confirm('The Dwarf looks at you, and looks you up and down, and says "Well, do you want me to join you or not')
+                        if(bool == True) {
+                            wDwarf = True;
+                            var index = Array.indexOf("Dwarf")
+                            if(index < 0){
+                                ungathered.splice(index)
+                            }
+                            Inn(wDwarf, wElf)
+                        }
+                    }
+                    
+                    
+                }
+                
+                
+                
+                
+            }
+        
+        
+
+        
+        
+        
+        </script>
+    
+    
+    
+    
+    </body>
+
+
+
+
+
+
+
+
+</html>
+
