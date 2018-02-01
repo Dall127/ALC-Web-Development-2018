@@ -9,23 +9,52 @@
         <h1>Adventure Game v0.1</h1>
          <p>By: Dallin</p>
         <script>
-        endStatement = "You return to looking at your surroundings."
-        askStatement = "What do you want to do"
-        wDwarf = False;
-        wElf == False;
-        wWand == False;
+        function remove(_array, _toRemove) {
+            array = _array;
+            for(i = 0; i < array.length; i++) {
+                if(array[i] == toRemove) {
+                    array = array.splice(i, 1);
+                    return array;
+                }
+            }
+            return _toRemove
             
+        }    
             
-        Function actions(var action, var position, var people=null) {
-            if(action == Talk) {
+        endStatement = "You return to looking at your surroundings.";
+        askStatement = "What do you want to do";
+        var globalArray = {
+            gInnArray: ["dwarf", "elf"],
+        }
+        var invetory = {
+            money: 0,
+            wand: false,
+            
+        }
+          
+            
+        function Actions(action, area, people=null) {
+            if(action == "talk") {
                 if(people==null){
                     alert("There is no one here to talk to. Best be getting on");
                 }
                 else{
-                    var response = prompt("Who do you want to talk to?");
-                    return response;
-
+                    var response = prompt("Who do you want to talk to?").toLowerCase();
+                    for (i = 0; i < people.length; i++) {
+                       if(response == people[i])
+                          return response; 
+                        
+                     
+                      
+                    }
+                    
+                  alert("There is no-one here with the name " + response + endStatement);
                 }
+               
+            }
+            else{
+                alert("Not a valid option Please try again");
+                return "unavalible"
                 
             }
             
@@ -40,54 +69,113 @@
                          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                    ];
-        x = 5;
-        y = 6;
-        position = map[y][x];
-            Function() {
-                
+        posx = 5;
+        posy = 4;
+            
+        map[4][5] = Inn;
+        
+            function start() {
                 var playerName = prompt("What is your Name?");
-                alert("Welcome Sorcerer, welcome to Detheren");
+                alert("Welcome Sorcerer " + playerName + ", welcome to Detheren");
                 var beginAdv = confirm("Are you ready to begin your Adventure");
-                
-                if(beginAdv == True) {
-                    Inn();
+          
+                if(beginAdv == true) {
+                    return this.map[this.posy][this.posx];
                 }
                 
             }
-            Function Inn(var dwarf, var elf) {
-                dwarfP = ". A dwarf sits off in the corner"
-                ungathered = ["Dwarf", "Elf"]
-                var inn = "Inn"
-                if(dwarf == True) {
-                    
-                    var action = Prompt("The Inn smells of sweat and adventure" + if(wDwarf==True){ return dwarfP} +. "An Elf polishes his seemingly rare blade. " askStatement).toLowerCase();
-                }
+            function Inn() {
+                dwarfP = " A dwarf sits off in the corner.";
+                elfP = " An elf sharpens his blade on a grindstone. This seems odd to you, since you know elven steel does not dull.";
+                
+                var inn = "Inn";
+                alert(this.globalArray.gInnArray)
 
-                if(Actions(action, inn, ungathered)) == "Dwarf") {
-                    if(elf == True) {
+                if(this.globalArray.gInnArray.length == 2) {
+                    var action = prompt("You are at an inn." + dwarfP + elfP + ". The smell of adventure lingers in the air. " + askStatement).toLowerCase();
+                    wElf = false;
+                    wDwarf = false;
+                    
+                }
+                else{
+                    if(this.globalArray.gInnArray[0] == 'dwarf') {
+                        var action = prompt("You are at an inn. " + dwarfP + ". The smell of adventure lingers in the air. " + askStatement).toLowerCase();
+                        wDwarf = false;
+                        wElf = true;
+
+                    }
+                    else{
+                        var action = prompt("You are at an inn." + elfP + ". The smell of adventure lingers in the air. " + askStatement).toLowerCase();
+                        wDwarf = true;
+                        wElf = false;
+                    }
+                }
+                
+                nextAction = Actions(action, inn, this.globalArray.gInnArray);
+                if(nextAction == "dwarf") {
+                    if(wElf == true) {
                         Alert("The Dwarf looks at you, and seems to want to talk, but then sees the elf with you; the look of disgust is very apparent. He does not respond." + endStatement);
-                        Inn();
+                        return Inn;
                         
-                        };
-                    else if(wdwarf == False) {
-                        var bool = confirm('The Dwarf looks at you, and looks you up and down, and says "Well, do you want me to join you or not')
-                        if(bool == True) {
-                            wDwarf = True;
-                            var index = Array.indexOf("Dwarf")
+                        }
+                    else if(wElf == false) {
+                        var bool = confirm('The Dwarf looks at you, and looks you up and down, and says "Well, do you want me to join you or not');
+                        if(bool == true) {
+                            var index = this.globalArray.gInnArray.indexOf("dwarf");
                             if(index < 0){
-                                ungathered.splice(index)
+                                this.globalArray.gInnArray = this.globalArray.gInnArray.splice(index, 1);
+                                return Inn 
                             }
-                            Inn(wDwarf, wElf)
+                            
+                        }
+                        else{
+                            alert(endStatement);
+                            return Inn;
                         }
                     }
                     
                     
                 }
-                
-                
-                
-                
+                if(nextAction == "elf"){
+                    if(wDwarf == true) {
+                        alert("The Elf looks at you with blatent disguist. You don't realize why at first, but then a grunt comes from your Dwarven companion and suddenly you understand why." + endStatement);
+                    }
+                    else if(wDwarf == false) {
+                        var bool = confirm('The Elf looks at you with slight disgust and says "Well, do you want me to join you or not?"');
+                        if(bool == true) {
+                            var index = this.globalArray.gInnArray.indexOf("elf");
+                            if(index < 0){
+                                this.globalArray.gInnArray.splice(index , 1);
+                            }
+                            alert("elf")
+                            return Inn;
+                                
+                            
+                        }
+                        else{
+                            alert(endStatement);
+                            return Inn;
+                        }
+                    }
+                    
+                }
+                else if(nextAction == "unavalible") {
+                    return Inn;
+                }
+                 
             }
+
+            var func = start();
+            while(true) {
+                var func = func.call()
+            }
+            
+            
+                    
+            
+                
+                
+            
         
         
 
