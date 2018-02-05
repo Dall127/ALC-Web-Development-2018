@@ -9,7 +9,7 @@
         <h1>Adventure Game v0.1</h1>
          <p>By: Dallin</p>
         <script>
-        function remove(_array, _toRemove) {
+        function remove(_array, toRemove) {
             array = _array;
             for(i = 0; i < array.length; i++) {
                 if(array[i] == toRemove) {
@@ -26,7 +26,9 @@
         var globalArray = {
             gInnArray: ["dwarf", "elf"],
         }
-        var invetory = {
+        var globalInvetory = {
+            dwarf: false,
+            elf: false,
             money: 0,
             wand: false,
             
@@ -52,6 +54,46 @@
                 }
                
             }
+            else if(action == "move") {
+                var posX = this.posx;
+                var posY = this.posY;
+                var direction = prompt("Which direction which you would like to move?");
+                if(direction == "up") {
+                    while((this.map[posX][posY]) == 2) {
+                        posY -= 1;
+                        }
+                    if(this.map[this.posx][this.posY] != 0) {
+                        this.posy -= posY;
+                        return this.map[this.posx][this.posy];
+                    }
+                    else{
+                        alert("You are not able to move in that direction." + endStatement)
+                        return "unavalible"
+                    }
+                    
+                    
+                }
+                if (direction == "down") {
+                    while((this.map[posX][posY]) == 2) {
+                        posY += 1;
+                        }
+                    if(this.map[this.posx][this.posY] != 0) {
+                        this.posy = posY;
+                        return this.map[this.posx][this.posy];
+                    }
+                    else{
+                        alert("You are not able to move in that direction." + endStatement)
+                        return this.map[this.posx][this.posy];
+                    }
+                    
+                }
+                
+                
+                
+                
+                
+                
+            }
             else{
                 alert("Not a valid option Please try again");
                 return "unavalible"
@@ -73,6 +115,8 @@
         posy = 4;
             
         map[4][5] = Inn;
+      
+        map[2][5] = Town;
         
             function start() {
                 var playerName = prompt("What is your Name?");
@@ -88,7 +132,7 @@
                 dwarfP = " A dwarf sits off in the corner.";
                 elfP = " An elf sharpens his blade on a grindstone. This seems odd to you, since you know elven steel does not dull.";
                 
-                var inn = "Inn";
+            
                 alert(this.globalArray.gInnArray)
 
                 if(this.globalArray.gInnArray.length == 2) {
@@ -111,7 +155,7 @@
                     }
                 }
                 
-                nextAction = Actions(action, inn, this.globalArray.gInnArray);
+                nextAction = Actions(action, Inn, this.globalArray.gInnArray);
                 if(nextAction == "dwarf") {
                     if(wElf == true) {
                         Alert("The Dwarf looks at you, and seems to want to talk, but then sees the elf with you; the look of disgust is very apparent. He does not respond." + endStatement);
@@ -121,10 +165,10 @@
                     else if(wElf == false) {
                         var bool = confirm('The Dwarf looks at you, and looks you up and down, and says "Well, do you want me to join you or not');
                         if(bool == true) {
-                            var index = this.globalArray.gInnArray.indexOf("dwarf");
-                            if(index < 0){
-                                this.globalArray.gInnArray = this.globalArray.gInnArray.splice(index, 1);
-                                return Inn 
+                            remove(this.globalArray.gInnArray, "dwarf");
+                            this.globalInvetory.dwarf = true;
+
+                            return Inn; 
                             }
                             
                         }
@@ -133,21 +177,17 @@
                             return Inn;
                         }
                     }
-                    
-                    
-                }
+                
                 if(nextAction == "elf"){
                     if(wDwarf == true) {
-                        alert("The Elf looks at you with blatent disguist. You don't realize why at first, but then a grunt comes from your Dwarven companion and suddenly you understand why." + endStatement);
+                        alert("The Elf looks at you with blatent disguist. You don't realize why at first, but then a grunt comes from your Dwarven companion and suddenly you understand why. " + endStatement);
+                        return Inn;
                     }
                     else if(wDwarf == false) {
                         var bool = confirm('The Elf looks at you with slight disgust and says "Well, do you want me to join you or not?"');
                         if(bool == true) {
-                            var index = this.globalArray.gInnArray.indexOf("elf");
-                            if(index < 0){
-                                this.globalArray.gInnArray.splice(index , 1);
-                            }
-                            alert("elf")
+                            remove(this.globalArray.gInnArray, "elf");
+                            this.globalInvetory.elf = true;
                             return Inn;
                                 
                             
@@ -159,12 +199,22 @@
                     }
                     
                 }
+               
+                    
+            
                 else if(nextAction == "unavalible") {
                     return Inn;
                 }
+                else{
+                    return nextAction;
+                }
                  
             }
-
+            
+            function Town() {
+                alert("ha ha ha, you are going back to the inn. Goodbye")
+                Inn()
+            }
             var func = start();
             while(true) {
                 var func = func.call()
