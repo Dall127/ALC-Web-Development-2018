@@ -33,6 +33,23 @@
             wand: false,
             
         }
+        var map = [
+
+                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 1, 2, 1, 2, 1, 0, 0],
+                     [0, 0, 0, 4, 0, 2, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                   ];
+
+        posx = 5;
+        posy = 4;
+            
+        map[4][5] = Inn;
+      
+        map[2][5] = Town;
           
             
         function Actions(action, area, people=null) {
@@ -55,68 +72,46 @@
                
             }
             else if(action == "move") {
-                var posX = this.posx;
-                var posY = this.posY;
                 var direction = prompt("Which direction which you would like to move?");
                 if(direction == "up") {
-                    while((this.map[posX][posY]) == 2) {
-                        posY -= 1;
+                    if((this.map[this.posy -= 1][this.posx]) == 2) {
+                        alert("moving")
+                        this.posy -= 1;
                         }
-                    if(this.map[this.posx][this.posY] != 0) {
-                        this.posy -= posY;
-                        return this.map[this.posx][this.posy];
+                    if(this.map[this.posy][this.posx] != 0) {
+                        alert("moved")
+                        return this.map[this.posy][this.posx];
                     }
                     else{
                         alert("You are not able to move in that direction." + endStatement)
-                        return "unavalible"
+                        return area
                     }
                     
                     
                 }
-                if (direction == "down") {
-                    while((this.map[posX][posY]) == 2) {
-                        posY += 1;
+                if(direction == "down") {
+                    if((this.map[this.posy += 1][this.posx]) == 2) {
+                        alert("moving")
+                        this.posy += 1;
                         }
-                    if(this.map[this.posx][this.posY] != 0) {
-                        this.posy = posY;
-                        return this.map[this.posx][this.posy];
+                    if(this.map[this.posy][this.posx] != 0) {
+                        alert("moved")
+                        return this.map[this.posy][this.posx];
                     }
                     else{
                         alert("You are not able to move in that direction." + endStatement)
-                        return this.map[this.posx][this.posy];
+                        return area
                     }
-                    
-                }
-                
-                
-                
-                
-                
-                
-            }
-            else{
+                 }
+                else{
                 alert("Not a valid option Please try again");
                 return "unavalible"
                 
             }
             
         }
-        var map = [
 
-                         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                         [0, 0, 1, 2, 2, 1, 2, 2, 1, 0],
-                         [0, 0, 0, 4, 0, 2, 0, 0, 0, 0],
-                         [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-                         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                   ];
-        posx = 5;
-        posy = 4;
             
-        map[4][5] = Inn;
-      
-        map[2][5] = Town;
         
             function start() {
                 var playerName = prompt("What is your Name?");
@@ -128,12 +123,17 @@
                 }
                 
             }
+            function Town() {
+            var action = prompt("The town seems dreary, and worn down. Two roads diverged in redwood.");
+            
+            }
             function Inn() {
                 dwarfP = " A dwarf sits off in the corner.";
                 elfP = " An elf sharpens his blade on a grindstone. This seems odd to you, since you know elven steel does not dull.";
                 
+                
             
-                alert(this.globalArray.gInnArray)
+            
 
                 if(this.globalArray.gInnArray.length == 2) {
                     var action = prompt("You are at an inn." + dwarfP + elfP + ". The smell of adventure lingers in the air. " + askStatement).toLowerCase();
@@ -211,13 +211,10 @@
                  
             }
             
-            function Town() {
-                alert("ha ha ha, you are going back to the inn. Goodbye")
-                Inn()
-            }
+
             var func = start();
             while(true) {
-                var func = func.call()
+                var func = func.call();
             }
             
             
