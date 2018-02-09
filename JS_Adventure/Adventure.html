@@ -22,15 +22,18 @@
         }    
             
         endStatement = "You return to looking at your surroundings.";
-        askStatement = "What do you want to do";
+        askStatement = "What do you want to do?";
         var globalArray = {
             gInnArray: ["dwarf", "elf"],
+            gPeople: [],
+            gBNEnemies: ["black night"],
         }
         var globalInvetory = {
             dwarf: false,
             elf: false,
             money: 0,
             wand: false,
+            battleAxe: false,
             
         }
         var map = [
@@ -50,9 +53,14 @@
         map[4][5] = Inn;
       
         map[2][5] = Town;
+        map[2][3] = KillerBunny;
+        map[2][7] = BlackKnight;
           
             
         function Actions(action, area, people=null) {
+            if(action == "fight"){
+                
+            }
             if(action == "talk") {
                 if(people==null){
                     alert("There is no one here to talk to. Best be getting on");
@@ -68,6 +76,7 @@
                     }
                     
                   alert("There is no-one here with the name " + response + endStatement);
+                  return(area);
                 }
                
             }
@@ -75,11 +84,9 @@
                 var direction = prompt("Which direction which you would like to move?");
                 if(direction == "up") {
                     if((this.map[this.posy -= 1][this.posx]) == 2) {
-                        alert("moving")
-                        this.posy -= 1;
+                          this.posy -= 1;
                         }
                     if(this.map[this.posy][this.posx] != 0) {
-                        alert("moved")
                         return this.map[this.posy][this.posx];
                     }
                     else{
@@ -91,11 +98,9 @@
                 }
                 if(direction == "down") {
                     if((this.map[this.posy += 1][this.posx]) == 2) {
-                        alert("moving")
                         this.posy += 1;
                         }
                     if(this.map[this.posy][this.posx] != 0) {
-                        alert("moved")
                         return this.map[this.posy][this.posx];
                     }
                     else{
@@ -103,12 +108,38 @@
                         return area
                     }
                  }
-                else{
+                if(direction == "left") {
+                    if((this.map[this.posy][this.posx - 1]) == 2) {
+                        print("moving")
+                        this.posx -= 1;
+                        }
+                    if(this.map[this.posy][this.posx] != 0 && this.map[this.posy][this.posx] != area) {
+                        return this.map[this.posy][this.posx];
+                    }
+                    else{
+                        alert("You are not able to move in that direction." + endStatement)
+                        return area
+                    }
+                }
+                    if(direction == "right") {
+                        if((this.map[this.posy][this.posx - 1]) == 2) {
+                            this.posx += 1;
+                        }
+                    if(this.map[this.posy][this.posx] != 0) {
+                        return this.map[this.posy][this.posx];
+                    }
+                    else{
+                        alert("You are not able to move in that direction." + endStatement)
+                        return area
+                    }
+                }
+
+            
+        }
+            else{
                 alert("Not a valid option Please try again");
                 return "unavalible"
-                
-            }
-            
+                }
         }
 
             
@@ -123,33 +154,71 @@
                 }
                 
             }
+            function BlackNight() {
+                var action = prompt("After walking down the red forest for a good while, you see someone inf the distance. Walking a little further, you see a knight dressed in black. As you approach, he says to you, \"You cannot pass. I will not allow it\"");
+                nextAction = Actions(action, BlackNight, null, )
+                if(action == "win") {
+                    alert()
+                }
+            }
             function Town() {
-            var action = prompt("The town seems dreary, and worn down. Two roads diverged in redwood.");
+            var action = prompt("The town seems dreary, and worn down. Two roads diverged in red forest. There really isn't much to do here but move on " + askStatement);
+            var localList = [];
+            if(this.globalInvetory.dwarf){
+                localList.push("dwarf")
+            }
+            if(this.globalInvetory.elf){
+                localList.push("elf")
+            }
+            nextAction = Actions(action, Town, localList);
+            if(nextAction == "dwarf"){
+                var bool = confirm('The Dwarf looks you up and down, as if he hadnt\'t already looked at you enough. After a few seconds he says, "Look laddie, your going to need a weapon. Do ye want my spare battleAxe?"');
+                if(bool) {
+                    this.globalInvetory.battleAxe = true;
+                    alert(endStatement);
+                    return Town;
+                }
+            
+                
+                
+            }
+            if(nextAction == "elf") {
+                var bool = confirm("The elf looks around, as if he is hiding for someone, but soon seems to calm down. He then drops his snotty act and says, \"You never know who is on your side... You seem to be ill equiped for adventuring. Would you like a wand? Assuming that you can wield it...")
+                if(bool) {
+                    this.globalInvetory.wand = true;
+                    alert(endStatement);
+                    return Town;
+                }
+            }
+            else {
+                return nextAction;
+            }
+
             
             }
             function Inn() {
                 dwarfP = " A dwarf sits off in the corner.";
-                elfP = " An elf sharpens his blade on a grindstone. This seems odd to you, since you know elven steel does not dull.";
+                elfP = " An elf sharpens his blade on a grindstone. This seems odd to you, since you know elven steel does not dull";
                 
                 
             
             
 
                 if(this.globalArray.gInnArray.length == 2) {
-                    var action = prompt("You are at an inn." + dwarfP + elfP + ". The smell of adventure lingers in the air. " + askStatement).toLowerCase();
+                    var action = prompt("You are at an inn." + dwarfP + elfP + " The smell of adventure lingers in the air. " + askStatement).toLowerCase();
                     wElf = false;
                     wDwarf = false;
                     
                 }
                 else{
                     if(this.globalArray.gInnArray[0] == 'dwarf') {
-                        var action = prompt("You are at an inn. " + dwarfP + ". The smell of adventure lingers in the air. " + askStatement).toLowerCase();
+                        var action = prompt("You are at an inn. " + dwarfP + " The smell of adventure lingers in the air. " + askStatement).toLowerCase();
                         wDwarf = false;
                         wElf = true;
 
                     }
                     else{
-                        var action = prompt("You are at an inn." + elfP + ". The smell of adventure lingers in the air. " + askStatement).toLowerCase();
+                        var action = prompt("You are at an inn." + elfP + " The smell of adventure lingers in the air. " + askStatement).toLowerCase();
                         wDwarf = true;
                         wElf = false;
                     }
@@ -158,24 +227,23 @@
                 nextAction = Actions(action, Inn, this.globalArray.gInnArray);
                 if(nextAction == "dwarf") {
                     if(wElf == true) {
-                        Alert("The Dwarf looks at you, and seems to want to talk, but then sees the elf with you; the look of disgust is very apparent. He does not respond." + endStatement);
+                        alert("The Dwarf looks at you, and seems to want to talk, but then sees the elf with you; the look of disgust is very apparent. He does not respond. " + endStatement);
                         return Inn;
                         
                         }
                     else if(wElf == false) {
                         var bool = confirm('The Dwarf looks at you, and looks you up and down, and says "Well, do you want me to join you or not');
-                        if(bool == true) {
+                        if(bool) {
                             remove(this.globalArray.gInnArray, "dwarf");
                             this.globalInvetory.dwarf = true;
-
                             return Inn; 
-                            }
-                            
-                        }
+                                }
                         else{
                             alert(endStatement);
                             return Inn;
+                            }
                         }
+
                     }
                 
                 if(nextAction == "elf"){
@@ -189,13 +257,11 @@
                             remove(this.globalArray.gInnArray, "elf");
                             this.globalInvetory.elf = true;
                             return Inn;
-                                
-                            
-                        }
+                                }
                         else{
                             alert(endStatement);
                             return Inn;
-                        }
+                            }
                     }
                     
                 }
