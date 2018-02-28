@@ -3,6 +3,10 @@
     <body>
 
         <h1>My First JavaScript Animation</h1>
+
+        <button onclick="myMove()">Down</button>
+
+
         <div id="container">
             <div id="animation"></div>
         </div>
@@ -28,21 +32,31 @@
 </style>
 
 <script>
-myMove();    
 function myMove() {
-  var elem = document.getElementById("animation");   
+  var elem = document.getElementById("animation");
   var pos = 0;
   var id = setInterval(frame, 5);
-  function frame() {
-    if (pos == 350) {
-      clearInterval(id);
-    } else {
-      pos++; 
-      elem.style.top = pos + 'px'; 
-      elem.style.left = pos + 'px'; 
+  
+    function frame(direction) {
+
+        if (pos == 350) {
+            clearInterval(id);
+        }
+        else{
+            pos++; 
+            elem.style.top = pos + 'px'; 
+            elem.style.left = pos + 'px'; 
+
+        }
     }
-  }
+
+
 }
+        
+
+
+
+
     
 
     
