@@ -1,0 +1,24 @@
+/* Global Css */
+
+
+
+
+.nav-bar {
+    background-color: black;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+    font-family: 'Work Sans', sans-serif;
+    color: white;
+
+}
+a.nav-bar {
+    
+}
+
+img.main-image {
+    width: 60%;
+    height: 25%
+    
+}
