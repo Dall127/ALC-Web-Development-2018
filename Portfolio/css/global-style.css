@@ -10,15 +10,24 @@
     top: 0;
     width: 100%;
     font-family: 'Work Sans', sans-serif;
-    color: white;
 
 }
-a.nav-bar {
+
+a.links {
+    text-decoration: none;
+    color: #ffffff;
     
 }
+
 
 img.main-image {
     width: 60%;
     height: 25%
+    
+}
+.horz-line {
+    background-color: color: grey;
+    width: 80%;
+    height: .25em;
     
 }
