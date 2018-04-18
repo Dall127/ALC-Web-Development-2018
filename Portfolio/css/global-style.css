@@ -1,14 +1,21 @@
 /* Global Css */
 
 
+html {
+    background-color: #f2f2f2;
+    font-family: 'Work Sans', sans-serif;
 
+        
+}
 
 .nav-bar {
     background-color: black;
     position: fixed;
     overflow: hidden;
     top: 0;
+    left: 0;
     width: 100%;
+    height: auto;
     font-family: 'Work Sans', sans-serif;
 
 }
@@ -16,7 +23,13 @@
 a.links {
     text-decoration: none;
     color: #ffffff;
+    font-size: 1.5em;
+    padding-left: 1em;
+    padding-right: 1em;
     
+}
+a.links:active {
+    color: grey;
 }
 
 
@@ -25,9 +38,42 @@ img.main-image {
     height: 25%
     
 }
-.horz-line {
-    background-color: color: grey;
-    width: 80%;
+div.horz-line {
+    background-color: rgba(169,169,169, 20);
+    width: 100%;
     height: .25em;
+    border-radius: 1px;
     
+}
+
+div.photo-with-caption {
+    width: 20%;
+    height: 30%;
+    display: flex;
+    
+}
+.photo-with-caption {
+    flex-direction: row;
+}
+.page-identifier {
+    width: 100%;
+    padding: 4em;
+    align-content: center;
+}
+p#page-name {
+    text-align: center;
+    font-size: 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    
+}
+div.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.photo {
+    width: 100%;
+    height: 100%;
 }
