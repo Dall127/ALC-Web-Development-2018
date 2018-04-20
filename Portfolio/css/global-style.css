@@ -1,6 +1,10 @@
 /* Global Css */
-
-
+/* Reset */
+html,body,div,h1,h2,h3,h4,h5,h6,ul,ol,li,p
+{
+    margin:0;
+    padding:0;
+}
 html {
     background-color: #f2f2f2;
     font-family: 'Work Sans', sans-serif;
@@ -17,13 +21,14 @@ html {
     width: 100%;
     height: auto;
     font-family: 'Work Sans', sans-serif;
+    padding-bottom: .5em;
 
 }
 
 a.links {
     text-decoration: none;
     color: #ffffff;
-    font-size: 1.5em;
+    font-size: 1em;
     padding-left: 1em;
     padding-right: 1em;
     
@@ -33,11 +38,7 @@ a.links:active {
 }
 
 
-img.main-image {
-    width: 60%;
-    height: 25%
-    
-}
+
 div.horz-line {
     background-color: rgba(169,169,169, 20);
     width: 100%;
@@ -47,14 +48,17 @@ div.horz-line {
 }
 
 div.photo-with-caption {
-    width: 20%;
+    width: 50%;
     height: 30%;
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 1em;
     
 }
-.photo-with-caption {
-    flex-direction: row;
-}
+
 .page-identifier {
     width: 100%;
     padding: 4em;
@@ -76,4 +80,28 @@ div.content {
 .photo {
     width: 100%;
     height: 100%;
+    pointer-events: none;
+}
+footer {
+    text-align: center;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    width 100%;
+    height: auto;
+    background: black;
+    color: white
+}
+div.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+}
+img.main-image {
+    width: 60%;
+    height: auto;
+    pointer-events: none;
+    
 }
