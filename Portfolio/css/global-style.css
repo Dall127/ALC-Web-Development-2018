@@ -8,40 +8,100 @@ html,body,div,h1,h2,h3,h4,h5,h6,ul,ol,li,p
 html {
     background-color: #f2f2f2;
     font-family: 'Work Sans', sans-serif;
-
+    max-width: 1000px;
+    align-content: center;
         
+}
+p {
+    padding: 1em;
 }
 div#header {
     position: absolute;
     z-index: 99;
     
 }
-
-
-@media only screen and (min-width: 560px) {
-    .nav-bar{
-        display: flex;
-        justify-content: space-around;
-        background-color: black;
-        position: fixed;
-        overflow: hidden;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
-        font-family: 'Work Sans', sans-serif;
-        padding-bottom: .5em;  
+.nav-bar{
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    font-family: 'Work Sans', sans-serif;
+    padding-bottom: .5em;  
     }
-    a.links {
+a.links {
     text-decoration: none;
     color: #ffffff;
-    font-size: 1em;
+    font-size: 1.2em;
     padding-left: 1em;
     padding-right: 1em;
     
     }
+a.page {
+    display: none
+}
+div.space-holder {
+    display: none;
+}
 
 
+@media only screen and (max-width: 560px) {
+    div.box {
+        justify-content: center;
+        width: 33%;
+        padding: .1em;
+        padding-left: .4em;
+        
+    }
+    a.menu-icon-container {
+        display: flex;
+        flex-direction: column;
+    }
+    div.menu-icon {
+    display: flex;
+    width: 2em;
+    height: .25em;
+    background-color: white;
+    margin: 3px 0;
+
+    }
+    .page-identifier{
+       display: none;
+    }
+    a.links {
+    display: none;
+    
+    }
+    a.page {
+        text-align: left;
+        width: 33%;
+        font-size: 1em;
+        display: flex;
+        color: white;
+        padding: .2em .2em .2em .2em;
+        
+        
+    }
+    div.content {
+        padding-top: 4em;
+        align-items: center;
+    }
+    div.nav-bar {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+    div.space-holder {
+    display: block;
+    justify-content: flex-end;
+    display: flex;
+    width: 33%;
+    height: auto;
+    }
 }
 
 
@@ -92,6 +152,7 @@ div.content {
     flex-direction: column;
     align-items: center;
     
+    
 }
 .photo {
     width: 100%;
@@ -120,4 +181,7 @@ img.main-image {
     height: auto;
     pointer-events: none;
     
+}
+p {
+    padding: 1em;
 }
