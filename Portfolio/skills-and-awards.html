@@ -5,21 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet"> 
         <link href="css/global-style.css" rel='stylesheet'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/js/bootstrap.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap-modal-fullscreen/1.0.3/bootstrap-modal-fullscreen.min.js"></script>
     <title>Dallin's Portfolio</title>
 </head>
 
 <body>
-    <div class='top-page'>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="index.html">About</a>
+    <a href="skills-and-awards.html">Skills and Awards</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+
+  </div>
+</div>    
+    
+      <div id='navigation' class='overlay'>
+          <a href="javascript:void(0)" class='closebtn' onclick="closeNav()">&times;</a>
+          <div class='overlay-content'>
+              
+          </div>
+    </div>
+ 
+        <div class='top-page'>
         
         <div class='nav-bar'>
-            <div class='box'>
-                 <a class='menu-icon-container' onclick='nav-modal()'>
-                    <div class='menu-icon'></div>
-                    <div class='menu-icon'></div>
-                    <div class='menu-icon'></div>            
+            <div class='box' onclick='openNav()'>
+                 <a class='menu-icon-container' onclick='openNav()'>
+                    <div class='menu-icon' onclick='openNav()'></div>
+                    <div class='menu-icon' onclick='openNav()' ></div>
+                    <div class='menu-icon' onclick='openNav()' ></div>            
                 </a>           
             </div>
 
@@ -38,30 +57,16 @@
         
         </div>
         </div>
+
     <div class='content'>
+
     <div class='page-identifier'>
-    <div class='horz-line'></div>
-    <p id='page-name'>Skills and Awards</p>
-    <div class='horz-line'></div>
+        <div class='horz-line'></div>
+        <p id='page-name'>Skills and Awards</p>
+        <div class='horz-line'></div>
 
     </div>
-    
-        <div class='block container'>
-        Science Olympiad State 2nd Place Gold Medal
-        <img />image 
-        </div>
-        <div class='block container'>
-            Cross Country Jv 1st place  
-            <img />image
-        </div>
-        <div class='block container'>
-            
-        </div>
 
-        
-        
-
-        
     </div>
     <footer>
     Dallin Burton
@@ -69,4 +74,14 @@
     
 </body>
 
-</html>
+
+<script>
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+</script>
+

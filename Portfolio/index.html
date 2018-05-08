@@ -13,21 +13,32 @@
 </head>
 
 <body>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="index.html">About</a>
+    <a href="skills-and-awards.html">Skills and Awards</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+
+  </div>
+</div>    
+    
       <div id='navigation' class='overlay'>
           <a href="javascript:void(0)" class='closebtn' onclick="closeNav()">&times;</a>
           <div class='overlay-content'>
-              <a href='#'>About</a>
+              
           </div>
     </div>
  
         <div class='top-page'>
         
         <div class='nav-bar'>
-            <div class='box' onclick='navigation()'>
-                 <a class='menu-icon-container' onclick='navigation()'>
-                    <div class='menu-icon' onclick='navigation()'></div>
-                    <div class='menu-icon' onclick='navigation()' ></div>
-                    <div class='menu-icon' onclick='navigation()' ></div>            
+            <div class='box' onclick='openNav()'>
+                 <a class='menu-icon-container' onclick='openNav()'>
+                    <div class='menu-icon' onclick='openNav()'></div>
+                    <div class='menu-icon' onclick='openNav()' ></div>
+                    <div class='menu-icon' onclick='openNav()' ></div>            
                 </a>           
             </div>
 
@@ -68,9 +79,12 @@
 
 
 <script>
-var navigation = function() {
-    $('#myModal').fullscreen();
-
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
 }
 
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
 </script>
+

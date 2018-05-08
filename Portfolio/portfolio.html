@@ -12,14 +12,22 @@
 </head>
 
 <body>
-    <div class='top-page'>
+    
+      <div id='navigation' class='overlay'>
+          <a href="javascript:void(0)" class='closebtn' onclick="closeNav()">&times;</a>
+          <div class='overlay-content'>
+              
+          </div>
+    </div>
+ 
+        <div class='top-page'>
         
         <div class='nav-bar'>
-            <div class='box'>
-                 <a class='menu-icon-container' onclick='nav-modal()'>
-                    <div class='menu-icon'></div>
-                    <div class='menu-icon'></div>
-                    <div class='menu-icon'></div>            
+            <div class='box' onclick='openNav()'>
+                 <a class='menu-icon-container' onclick='openNav()'>
+                    <div class='menu-icon' onclick='openNav()'></div>
+                    <div class='menu-icon' onclick='openNav()' ></div>
+                    <div class='menu-icon' onclick='openNav()' ></div>            
                 </a>           
             </div>
 
@@ -80,3 +88,12 @@
     Dallin Burton
     </footer>
 </html>
+<script>
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+</script>
