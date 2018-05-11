@@ -1,0 +1,19 @@
+input.text-box {
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+
+input.text-box.small {
+    width: 40%;
+    height: 2.5em;
+    
+}
+
+input.text-box.large {
+    width: 80%;
+    height: 10em;
+    
+}

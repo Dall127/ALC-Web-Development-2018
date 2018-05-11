@@ -3,7 +3,24 @@ div.progress-block img {
 }
 
 div.progress-block  {
+
   font-size: 2em;
   padding: 1em;
+  display: flex;
+  flex-direction: column;
+  width: 50%; 
+  height: auto;
+    
 }
 
+@media only screen and (max-width: 560px) {
+    div.progress-block  {
+        font-size: 2em;
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        width: 100%; 
+        height: auto;
+    }
+    
+    }
