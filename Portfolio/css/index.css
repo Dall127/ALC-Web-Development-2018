@@ -1,0 +1,15 @@
+img.main-image {
+    width: 60%;
+    height: auto;
+    pointer-events: none;
+    align-self: center
+}
+
+p.main {
+    width: 90%;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    text-align: center
+    
+}
+

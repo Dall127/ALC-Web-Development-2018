@@ -2,117 +2,65 @@
 <html lang="">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet"> 
-        <link href="css/global-style.css" rel='stylesheet'>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/bootstrap-modal-fullscreen/1.0.3/bootstrap-modal-fullscreen.min.js"></script>
-    <link rel='stylesheet' href='css/skills-and-awards.css'>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <link href="css/global-style.css" rel='stylesheet'>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href='css/skills-and-awards.css' rel='stylesheet'>
     <title>Dallin's Portfolio</title>
 </head>
-
 <body>
-<div id="myNav" class="overlay">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div class="overlay-content">
-    <a href="index.html">About</a>
-    <a href="skills-and-awards.html">Skills and Awards</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="contact.html">Contact</a>
-
-  </div>
-</div>    
-    
-      <div id='navigation' class='overlay'>
-          <a href="javascript:void(0)" class='closebtn' onclick="closeNav()">&times;</a>
-          <div class='overlay-content'>
-              
-          </div>
+    <div class="overlay" id="myNav">
+        <a class="closebtn" href="javascript:void(0)" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="index.html">About</a> <a href="skills-and-awards.html">Skills and Awards</a> <a href="portfolio.html">Portfolio</a> <a href="contact.html">Contact</a>
+        </div>
     </div>
- 
-        <div class='top-page'>
-        
+    <div class='overlay' id='navigation'>
+        <a class='closebtn' href="javascript:void(0)" onclick="closeNav()">&times;</a>
+        <div class='overlay-content'></div>
+    </div>
+    <div class='top-page'>
         <div class='nav-bar'>
-            <div class='box' onclick='openNav()'>
-                 <a class='menu-icon-container' onclick='openNav()'>
-                    <div class='menu-icon' onclick='openNav()'></div>
-                    <div class='menu-icon' onclick='openNav()' ></div>
-                    <div class='menu-icon' onclick='openNav()' ></div>            
-                </a>           
-            </div>
-
-
-
-                             
-            
-
-         
-            
-            <a class='links' href="index.html">About</a>
-            <a class='links' href="portfolio.html"> Portfolio</a> 
-            <a class='links' href="skills-and-awards.html"> Skills and Awards</a>
-            <a class='links' href="contact.html">Contact</a>
-
-            <a class='page'>Skills and Awards</a>
-            <div id='space-holder'></div>
-        
-        </div>
-        </div>
-
-    <div class='content'>
-
-    <div class='page-identifier'>
-        <div class='horz-line'></div>
-        <p id='page-name'>Skills and Awards</p>
-        <div class='horz-line'></div>
-
+        <div class='box' onclick='openNav()'>
+            <a class='menu-icon-container' onclick='openNav()'>
+            <div class='menu-icon' onclick='openNav()'></div>
+            <div class='menu-icon' onclick='openNav()'></div>
+            <div class='menu-icon' onclick='openNav()'></div></a>
+        </div><img class='logo desktop' src='media/images/Portfolio_logo.svg'> <a class='links' href="index.html">About</a> <a class='links' href="portfolio.html">Portfolio</a> <a class='links' href="skills-and-awards.html">Skills and Awards</a> <a class='links' href="contact.html">Contact</a> <img class='logo mobile' src='media/images/Portfolio_logo.svg'></div>
     </div>
-        <div class='progress-block'>
-            <a target="_blank"  href='https://isocpp.org/'>
-                <img src="media/images/HelloWorld.png">
-            </a>
-            <progress value='66' max='100'></progress>
+    <div class='content'>
+        <div class='page-identifier'>
+            <div class='horz-line'></div>
+            <p id='page-name'>Skills and Awards</p>
+            <div class='horz-line'></div>
         </div>
+        <div class='organizer'>
             <div class='progress-block'>
-            <a target="_blank" href='https://www.python.org/'>
-               <img  src="media/images/Python.svg.png">
-
-            </a>
-            <progress value='85' max='100'></progress>
+                <a href='https://isocpp.org/' target="_blank"><img src="media/images/HelloWorld.png"></a> <progress max='100' value='66'></progress>
             </div>
             <div class='progress-block'>
-            <a target="_blank" href='https://www.microsoft.com/net/'>
-                <img  src="media/images/csharp.png">
-            </a>
-            <progress value='50' max='100'></progress>
+                <a href='https://www.python.org/' target="_blank"><img src="media/images/Python.svg.png"></a> <progress max='100' value='85'></progress>
             </div>
             <div class='progress-block'>
-                <a target="_blank" href='https://www.javascript.com'>
-                 <img  src='media/images/JavaScript-logo.png'>
-                </a>
-
-                <progress value='66' max='100'></progress>
-        
+                <a href='https://www.microsoft.com/net/' target="_blank"><img src="media/images/csharp.png"></a> <progress max='100' value='50'></progress>
             </div>
-
-
+            <div class='progress-block'>
+                <a href='https://www.javascript.com' target="_blank"><img src='media/images/JavaScript-logo.png'></a> <progress max='100' value='66'></progress>
+            </div>
+        </div>
     </div>
     <footer>
-    Dallin Burton
+        Dallin Burton
     </footer>
-    
-</body>
-
-
-<script>
-function openNav() {
+    <script>
+    function openNav() {
     document.getElementById("myNav").style.width = "100%";
-}
+    }
 
-function closeNav() {
+    function closeNav() {
     document.getElementById("myNav").style.width = "0%";
-}
-</script>
-
+    }
+    </script>
+</body>
+</html>

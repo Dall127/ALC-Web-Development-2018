@@ -1,19 +1,20 @@
 input.text-box {
-    margin: 2em;
+    margin-top: 2em;
+    margin-left: 2em;
     display: flex;
-    flex-direction: column;
-    align-content: flex-start;
+    flex-direction: row;
 }
-
-
 input.text-box.small {
-    width: 40%;
+    width: 20em;
     height: 2.5em;
-    
 }
-
-input.text-box.large {
-    width: 80%;
-    height: 10em;
-    
+textarea.text-box.large {
+    margin-top: 2em;
+    margin-left: 1.79em;
+    width: 25em;
+    height: 15em;
+}
+button#submit {
+    margin-left: 1.79em;
+    margin-bottom: 1em;
 }

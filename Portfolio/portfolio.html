@@ -1,112 +1,76 @@
 <!DOCTYPE html>
-<html lang="">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet"> 
-        <link href="css/global-style.css" rel='stylesheet'>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/bootstrap-modal-fullscreen/1.0.3/bootstrap-modal-fullscreen.min.js"></script>
     <title>Dallin's Portfolio</title>
 </head>
-
 <body>
-<div id="myNav" class="overlay">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div class="overlay-content">
-    <a href="index.html">About</a>
-    <a href="skills-and-awards.html">Skills and Awards</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="contact.html">Contact</a>
-
-  </div>
-</div>    
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     
-      <div id='navigation' class='overlay'>
-          <a href="javascript:void(0)" class='closebtn' onclick="closeNav()">&times;</a>
-          <div class='overlay-content'>
-              
-          </div>
-    </div>
- 
-        <div class='top-page'>
+    <link href="css/global-style.css" rel='stylesheet'>
+    <link href='css/portrait.css' rel='stylesheet'>
+    <div class="overlay" id="myNav">
         
+        <a class="closebtn" href="javascript:void(0)" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="index.html">About</a> <a href="skills-and-awards.html">Skills and Awards</a> <a href="portfolio.html">Portfolio</a> <a href="contact.html">Contact</a>
+        </div>
+    </div>
+    <div class='overlay' id='navigation'>
+        <a class='closebtn' href="javascript:void(0)" onclick="closeNav()">&times;</a>
+        <div class='overlay-content'></div>
+    </div>
+    <div class='top-page'>
         <div class='nav-bar'>
-            <div class='box' onclick='openNav()'>
-                 <a class='menu-icon-container' onclick='openNav()'>
-                    <div class='menu-icon' onclick='openNav()'></div>
-                    <div class='menu-icon' onclick='openNav()' ></div>
-                    <div class='menu-icon' onclick='openNav()' ></div>            
-                </a>           
-            </div>
-
-
-
-                             
-            
-
-         
-            
-            <a class='links' href="index.html">About</a>
-            <a class='links' href="portfolio.html"> Portfolio</a> 
-            <a class='links' href="skills-and-awards.html"> Skills and Awards</a>  
-            <a class='links' href="contact.html">Contact</a>
-
-            <a class='page'>Portfolio</a>
-            <div id='space-holder'></div>
-        
-        </div>
-        </div>
-    <div class='content'>
-
-        <div class='page-identifier'>
-        <div class='horz-line'></div>  
-        <p id='page-name'>Portfolio</p>
-        <div class='horz-line'></div>
-
-        </div>
-        <div class='gallery'>
-            <div class='photo-with-caption'>
-                <img src='media/images/IMG_5791.JPG' class='photo'/>
-                <p>Portrait</p>
-            </div>
-
-            <div class='photo-with-caption'>
-                <img src="media/images/burton dallin light fav.jpg" class='photo'/>
-                <p>Light Painting</p>
-            </div>
-            <div class='photo-with-caption'>
-                <img src='media/images/desaturated_kaylee.JPG' class='photo' />
-                <p>Portrait</p>
-            </div>
-            <div class='photo-with-caption'>
-                <img src='media/images/IMG_5761.JPG' class='photo'/>
-                <p>Sand Storm</p>
-            </div>
-                        <div class='photo-with-caption'>        
-                <img src='media/images/sand_dunes_bw.JPG' class='photo'/>
-                <p>Sand</p>
-            </div>
-
-            
-        </div>
-
+        <div class='box' onclick='openNav()'>
+            <a class='menu-icon-container' onclick='openNav()'>
+            <div class='menu-icon' onclick='openNav()'></div>
+            <div class='menu-icon' onclick='openNav()'></div>
+            <div class='menu-icon' onclick='openNav()'></div></a>
+        </div><img class='logo desktop' src='media/images/Portfolio_logo.svg'> <a class='links' href="index.html">About</a> <a class='links' href="portfolio.html">Portfolio</a> <a class='links' href="skills-and-awards.html">Skills and Awards</a> <a class='links' href="contact.html">Contact</a> <img class='logo mobile' src='media/images/Portfolio_logo.svg'></div>
     </div>
-
-    
-</body>
+    <div class='content'>
+        <div class='page-identifier'>
+            <div class='horz-line'></div>
+            <p id='page-name'>Portfolio</p>
+            <div class='horz-line'></div>
+        </div>
+        <div class='organizer'>
+            <div class='photo-with-caption'>
+                <img class='photo' src='media/images/IMG_5791.JPG'>
+                <p class='caption'>Portrait</p>
+            </div>
+            <div class='photo-with-caption'>
+                <img class='photo' src="media/images/burton%20dallin%20light%20fav.jpg">
+                <p class='caption'>Light Painting</p>
+            </div>
+            <div class='photo-with-caption'>
+                <img class='photo' src='media/images/desaturated_kaylee.JPG'>
+                <p class='caption'>Portrait</p>
+            </div>
+            <div class='photo-with-caption'>
+                <img class='photo' src='media/images/IMG_5761.JPG'>
+                <p class='caption'>Sand Storm</p>
+            </div>
+            <div class='photo-with-caption'>
+                <img class='photo' src='media/images/sand_dunes_bw.JPG'>
+                <p class='caption'>Sand</p>
+            </div>
+        </div>
+    </div>
     <footer>
-    Dallin Burton
+        Dallin Burton
     </footer>
-</html>
-<script>
-function openNav() {
+    <script>
+    function openNav() {
     document.getElementById("myNav").style.width = "100%";
-}
+    }
 
-function closeNav() {
+    function closeNav() {
     document.getElementById("myNav").style.width = "0%";
-}
-</script>
+    }
+    </script>
+</body>
+</html>
